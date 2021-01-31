@@ -40,8 +40,9 @@ class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        List<Integer> output = s.findDuplicatesBetter(new int[] { 4,3,2,7,8,2,3,1 });
-        //List<Integer> output = s.findDuplicatesBetter(new int[] { 10,2,5,10,9,1,1,4,3,7 });
+        // testing
+        //List<Integer> output = s.findDuplicatesBetter(new int[] { 4,3,2,7,8,2,3,1 });
+        List<Integer> output = s.findDuplicatesBetter(new int[] { 10,2,5,10,9,1,1,4,3,7 });
 
         for(int x : output)
             System.out.println(x);
