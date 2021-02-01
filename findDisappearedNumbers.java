@@ -2,26 +2,17 @@ import java.util.*;
 
 class Solution2 {
 
-    // not working - TLE
-    // think about a better solution 
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> output = new ArrayList<Integer>();
         
         for(int i = 0; i < nums.length; i++) {
-            
-            while(nums[i] != i + 1) {
-                output.remove(Integer.valueOf(nums[i]));
+            int indx = Math.abs(nums[i]) - 1;
+            nums[indx] = - Math.abs(nums[indx]);
+        }
 
-                int t = nums[nums[i] - 1];
-                if(t == nums[i]) {
-                    output.add(Integer.valueOf(i + 1));
-                    break;
-                } else {
-                    nums[nums[i] - 1] = nums[i];
-                    nums[i] = t;
-                }
-            }
-
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] > 0)
+                output.add(i + 1);
         }
 
         return output;
